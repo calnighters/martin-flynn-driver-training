@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Box, Button, Drawer, IconButton, List, ListItem } from "@mui/material";
+import { Button, Drawer, IconButton, List, ListItem } from "@mui/material";
 import endpoints from "../routes/endpoints";
 import { useNavigate } from "react-router-dom";
 

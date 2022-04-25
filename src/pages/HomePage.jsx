@@ -1,4 +1,4 @@
-import { Stack, Typography } from "@mui/material";
+import { Stack } from "@mui/material";
 import CenterBox from "../components/CenterBox";
 import VeritcalAllignedBox from "../components/VerticalAllignedBox";
 import DefaultLayout from "../containers/DefaultLayout";

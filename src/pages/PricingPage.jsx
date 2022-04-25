@@ -1,4 +1,3 @@
-import { Stack } from "@mui/material";
 import BlockTypography from "../components/BlockTypography";
 import CenterBox from "../components/CenterBox";
 import PricingTable from "../components/PricingTable";
