@@ -15,9 +15,13 @@ const HomePage = () => {
             alignContent="center"
             alignItems="center"
           >
-            <BlockTypography>Covering all Telford areas</BlockTypography>
-            <BlockTypography>Reliable, punctual and patient</BlockTypography>
-            <BlockTypography>Excellent pass rates</BlockTypography>
+            <BlockTypography variant="h6">
+              Covering all Telford areas
+            </BlockTypography>
+            <BlockTypography variant="h6">
+              Reliable, punctual and patient
+            </BlockTypography>
+            <BlockTypography variant="h6">Excellent pass rates</BlockTypography>
           </Stack>
         </CenterBox>
         <CenterBox width={{ xs: "100%", sm: "50%" }}>

@@ -2,11 +2,10 @@ import { Stack } from "@mui/material";
 import BlockTypography from "../components/BlockTypography";
 import CenterBox from "../components/CenterBox";
 import VeritcalAllignedBox from "../components/VerticalAllignedBox";
+import { practicalPrice, theoryPrice } from "../constants";
 import DefaultLayout from "../containers/DefaultLayout";
 
 const TestsPage = () => {
-  const theory = 25;
-  const practical = 62;
   return (
     <DefaultLayout>
       <VeritcalAllignedBox marginTop={2}>
@@ -26,8 +25,8 @@ const TestsPage = () => {
               Only book your theory and practical tests on the offical gov.uk
               website. There are plenty of official looking websites that will
               charge a handling fee to book the test on your behalf. You should
-              not currently pay anymore than £{theory} for your theory test and
-              £{practical} for the practical test.
+              not currently pay anymore than £{theoryPrice} for your theory test
+              and £{practicalPrice} for the practical test.
             </BlockTypography>
           </Stack>
         </CenterBox>

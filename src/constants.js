@@ -8,6 +8,8 @@ const email = "tango7864@gmail.com";
 const highwayCode =
   "https://www.gov.uk/browse/driving/highway-code-road-safety";
 const helpfulInfo = "https://www.gov.uk/browse/driving/learning-to-drive";
+const theoryPrice = 25;
+const practicalPrice = 62;
 
 const externalUrls = [
   {
@@ -45,4 +47,6 @@ export {
   highwayCode,
   helpfulInfo,
   externalUrls,
+  theoryPrice,
+  practicalPrice,
 };
