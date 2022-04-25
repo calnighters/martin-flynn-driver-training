@@ -17,7 +17,7 @@ const NavBar = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ bgcolor: "#dc4b44" }}>
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Martin Flynn Driver Training
