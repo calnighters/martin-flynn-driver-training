@@ -3,10 +3,9 @@ import BlockTypography from "../components/BlockTypography";
 import CenterBox from "../components/CenterBox";
 import VeritcalAllignedBox from "../components/VerticalAllignedBox";
 import DefaultLayout from "../containers/DefaultLayout";
+import { phoneNumber, email } from "../constants";
 
 const ContactPage = () => {
-  const telephone = "07890040309";
-  const email = "tango7864@gmail.com";
   return (
     <DefaultLayout>
       <VeritcalAllignedBox marginTop={2}>
@@ -22,7 +21,7 @@ const ContactPage = () => {
               will get straight back to you.
             </BlockTypography>
             <BlockTypography>Martin Flynn Driver Training</BlockTypography>
-            <BlockTypography>Telephone: {telephone}</BlockTypography>
+            <BlockTypography>Telephone: {phoneNumber}</BlockTypography>
             <BlockTypography>Email: {email}</BlockTypography>
           </Stack>
         </CenterBox>

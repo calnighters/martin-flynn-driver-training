@@ -2,6 +2,7 @@ import HomePage from "../pages/HomePage";
 import TestsPage from "../pages/TestsPage";
 import PricingPage from "../pages/PricingPage";
 import ContactPage from "../pages/ContactPage";
+import UsefulLinksPage from "../pages/UsefulLinksPage";
 
 const endpoints = [
   {
@@ -21,6 +22,12 @@ const endpoints = [
     name: "Pricing",
     path: "/pricing",
     element: <PricingPage />,
+  },
+  {
+    navbar: true,
+    name: "Useful Links",
+    path: "/useful-links",
+    element: <UsefulLinksPage />,
   },
   {
     navbar: true,

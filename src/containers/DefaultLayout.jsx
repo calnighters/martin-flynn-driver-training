@@ -8,7 +8,7 @@ const DefaultLayout = ({ children }) => (
   <div>
     <NavBar />
     <VeritcalAllignedBox marginBottom={1}>
-      <CenterBox width={{ xs: "100%", sm: "30%" }} padding={5}>
+      <CenterBox width={{ xs: "100%", sm: "50%", md: "30%" }} padding={5}>
         <img
           src="logo.png"
           alt="Martin Flynn Driver Training"

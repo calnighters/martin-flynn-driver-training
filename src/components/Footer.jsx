@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { BottomNavigation, BottomNavigationAction, Paper } from "@mui/material";
-import FacebookIcon from "@mui/icons-material/Facebook";
 import { externalUrls } from "../constants";
 
 const Footer = () => {
@@ -12,6 +11,7 @@ const Footer = () => {
         bottom: 0,
         background: "transparent",
         marginBottom: "10px",
+        width: "100%",
       }}
       elevation={0}
     >
@@ -20,7 +20,9 @@ const Footer = () => {
         value={value}
         onChange={(event, newValue) => {
           setValue(newValue);
-          window.location.href = externalUrls[newValue].url;
+          window.location.href = externalUrls.filter(
+            (url) => url.type === "contact"
+          )[newValue].url;
         }}
         sx={{
           background: "transparent",
@@ -28,10 +30,13 @@ const Footer = () => {
           elevation: 0,
         }}
       >
-        <BottomNavigationAction
-          label={externalUrls[0].name}
-          icon={<FacebookIcon />}
-        />
+        {externalUrls
+          .filter((url) => url.type === "contact")
+          .map(({ name, icon }) => {
+            return (
+              <BottomNavigationAction key={name} label={name} icon={icon} />
+            );
+          })}
       </BottomNavigation>
     </Paper>
   );
