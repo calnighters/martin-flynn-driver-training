@@ -1,10 +1,11 @@
-import { baseEndpoint, baseUrl } from "../constants";
+import { auth, baseEndpoint, baseUrl } from "../constants";
 
 const create = (data, callbackSuccess, callbackError) =>
   fetch(`${baseUrl}${baseEndpoint}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      Authorization: auth,
     },
     body: JSON.stringify(data),
   }).then(

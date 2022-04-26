@@ -1,7 +1,12 @@
-import { baseEndpoint, baseUrl } from "../constants";
+import { auth, baseEndpoint, baseUrl } from "../constants";
 
 const deleteReview = (id, callbackSuccess, callbackError) =>
-  fetch(`${baseUrl}${baseEndpoint}/${id}`, { method: "DELETE" }).then(
+  fetch(`${baseUrl}${baseEndpoint}/${id}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: auth,
+    },
+  }).then(
     (result) => {
       callbackSuccess(result);
     },
