@@ -30,7 +30,7 @@ const AuthWrapper = ({ children }) => {
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+          <Avatar sx={{ m: 1, bgcolor: "#dc4b44" }}>
             <LockIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
