@@ -4,6 +4,7 @@ import PricingPage from "../pages/PricingPage";
 import ContactPage from "../pages/ContactPage";
 import UsefulLinksPage from "../pages/UsefulLinksPage";
 import TestimonialsPage from "../pages/TestimonialsPage";
+import AdminPage from "../pages/AdminPage";
 
 const endpoints = [
   {
@@ -41,6 +42,12 @@ const endpoints = [
     name: "Contact Details",
     path: "/contact-details",
     element: <ContactPage />,
+  },
+  {
+    navbar: true,
+    name: "Admin",
+    path: "/admin",
+    element: <AdminPage />,
   },
 ];
 

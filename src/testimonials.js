@@ -10,6 +10,8 @@ const testimonials = [
     He made sure I was stamping out bad habits and picking up good ones while I learned how to drive basically from scratch.
     Honestly, I couldn't recommend him highly enough.
     Thanks Martin!`,
+    date: "2021-01-01",
+    name: "Callum",
   },
   {
     id: 2,
@@ -17,6 +19,8 @@ const testimonials = [
     body: `Very professional driving instructor. 
     Patient and courteous, thank you Martin for you being just amazing.
     Highly recommended!`,
+    date: "2021-01-02",
+    name: "Callum",
   },
   {
     id: 3,
@@ -25,6 +29,8 @@ const testimonials = [
     Martin is a top professional instructor but also has that personal touch to make you feel like you're driving with a friend whilst learning.
     Honestly it's very easy for me to recommend him after passing but if you are torn between deciding who you want to take you forward I honestly wouldn't look any further than this guy.
     Thank you Marting for getting me my first time pass - Legend`,
+    date: "2021-01-03",
+    name: "Callum",
   },
   {
     id: 4,
@@ -36,6 +42,8 @@ const testimonials = [
     4 x 2 hour lessons and I passed first time round with 3 minors!
     Thank you again!
     I will be recommending you to everyone I know.`,
+    date: "2021-01-04",
+    name: "Callum",
   },
   {
     id: 5,
@@ -52,6 +60,8 @@ const testimonials = [
     Martin is an ace guy!
     He is very friendly, very passionate in what he does and is someone who will help you to the fullest extent.
     You will not be dissapointed!`,
+    date: "2021-01-05",
+    name: "Callum",
   },
   {
     id: 6,
@@ -61,6 +71,8 @@ const testimonials = [
     He also boosts your confidence throughout your lessons, which has not only benefitted my driving but also with external environments. 
     The lessons were not only instructive and helpful, but they were also enjoyable.
     I would highly recommend Martin. Thanks again!`,
+    date: "2021-01-06",
+    name: "Callum",
   },
   {
     id: 7,
@@ -70,6 +82,8 @@ const testimonials = [
     Martin reassured me that I could! I would defiantly recommend going with Martin Flynn to anybody who asks.
     I passed my test with 0 minors and if that doesn't show how good of a driving instructor Martin is, I don't know what will!
     Thanks for everything you have done with me!!`,
+    date: "2021-01-07",
+    name: "Callum",
   },
 ];
 

@@ -1,28 +1,29 @@
 import { Button, Paper, Rating, Stack } from "@mui/material";
-import testimonials from "../testimonials";
 import VeritcalAllignedBox from "../components/VerticalAllignedBox";
 import DefaultLayout from "../containers/DefaultLayout";
 import BlockTypography from "../components/BlockTypography";
 import CenterBox from "../components/CenterBox";
-import { useState } from "react";
-import { firstBy } from "thenby";
+import { useEffect, useState } from "react";
+import get from "../api/get";
 
 const TestimonialsPage = () => {
   const [recordCount, setRecordCount] = useState(3);
+  const [records, setRecords] = useState([]);
 
   const handleOnClick = (e) => {
     setRecordCount(recordCount + 3);
   };
 
-  const records = testimonials
-    .sort(
-      firstBy(function (a, b) {
-        return a.rating - b.rating;
-      }).thenBy(function (a, b) {
-        return a.id - b.id;
-      })
-    )
-    .reverse();
+  useEffect(() => {
+    get(
+      (result) => {
+        setRecords(result.testimonials);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }, []);
 
   return (
     <DefaultLayout>

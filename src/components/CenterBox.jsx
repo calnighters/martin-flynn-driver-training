@@ -8,6 +8,7 @@ const CenterBox = ({
   padding,
   disableVerticalCenter,
   disableCenter,
+  border,
 }) => (
   <Box
     display="flex"
@@ -17,6 +18,7 @@ const CenterBox = ({
     height={height}
     style={{ padding: padding || "25px" }}
     boxShadow="none"
+    border={border || "none"}
   >
     {children}
   </Box>
