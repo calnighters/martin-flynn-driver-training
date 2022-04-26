@@ -5,6 +5,7 @@ import ContactPage from "../pages/ContactPage";
 import UsefulLinksPage from "../pages/UsefulLinksPage";
 import TestimonialsPage from "../pages/TestimonialsPage";
 import AdminPage from "../pages/AdminPage";
+import AuthWrapper from "../containers/AuthWrapper";
 
 const endpoints = [
   {
@@ -47,7 +48,11 @@ const endpoints = [
     navbar: true,
     name: "Admin",
     path: "/admin",
-    element: <AdminPage />,
+    element: (
+      <AuthWrapper>
+        <AdminPage />
+      </AuthWrapper>
+    ),
   },
 ];
 
