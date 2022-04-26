@@ -12,7 +12,6 @@ const baseUrl = process.env.REACT_APP_BASE_URL;
 const baseEndpoint = "/martin-flynn";
 const password = process.env.REACT_APP_PASSWORD;
 const username = "ADMIN_USERNAME";
-const auth = Buffer.from(`${username}:${password}`).toString("base64");
 
 const externalUrls = [
   {
@@ -56,5 +55,4 @@ export {
   baseEndpoint,
   password,
   username,
-  auth,
 };
