@@ -1,6 +1,18 @@
 import React, { useState } from "react";
-import { BottomNavigation, BottomNavigationAction, Paper } from "@mui/material";
+import {
+  BottomNavigation,
+  BottomNavigationAction,
+  Paper,
+  styled,
+} from "@mui/material";
 import { externalUrls } from "../constants";
+
+const StyledBottomNavigationAction = styled(BottomNavigationAction)(`
+  color: #dc4b44;
+  &.Mui-selected {
+    color: #dc4b44;
+  }
+`);
 
 const Footer = () => {
   const [value, setValue] = useState(0);
@@ -34,7 +46,12 @@ const Footer = () => {
           .filter((url) => url.type === "contact")
           .map(({ name, icon }) => {
             return (
-              <BottomNavigationAction key={name} label={name} icon={icon} />
+              <StyledBottomNavigationAction
+                key={name}
+                label={name}
+                icon={icon}
+                sx={{ background: "transparent" }}
+              />
             );
           })}
       </BottomNavigation>

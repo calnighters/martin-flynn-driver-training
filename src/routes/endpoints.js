@@ -3,6 +3,7 @@ import TestsPage from "../pages/TestsPage";
 import PricingPage from "../pages/PricingPage";
 import ContactPage from "../pages/ContactPage";
 import UsefulLinksPage from "../pages/UsefulLinksPage";
+import TestimonialsPage from "../pages/TestimonialsPage";
 
 const endpoints = [
   {
@@ -28,6 +29,12 @@ const endpoints = [
     name: "Useful Links",
     path: "/useful-links",
     element: <UsefulLinksPage />,
+  },
+  {
+    navbar: true,
+    name: "Testimonials",
+    path: "/testimonials",
+    element: <TestimonialsPage />,
   },
   {
     navbar: true,

@@ -10,7 +10,7 @@ import React from "react";
 const UsefulLinksPage = () => {
   return (
     <DefaultLayout>
-      <VeritcalAllignedBox marginTop={2}>
+      <VeritcalAllignedBox>
         <BlockTypography variant="h4">Useful Links</BlockTypography>
         <CenterBox width={{ xs: "100%", sm: "50%" }}>
           <Stack spacing={0} alignContent="center" alignItems="center">

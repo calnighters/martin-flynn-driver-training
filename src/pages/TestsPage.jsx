@@ -8,7 +8,7 @@ import DefaultLayout from "../containers/DefaultLayout";
 const TestsPage = () => {
   return (
     <DefaultLayout>
-      <VeritcalAllignedBox marginTop={2}>
+      <VeritcalAllignedBox>
         <BlockTypography variant="h4">Practical & Theory Tests</BlockTypography>
         <CenterBox width={{ xs: "100%", sm: "50%" }}>
           <Stack spacing={2}>

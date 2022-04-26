@@ -10,7 +10,7 @@ const UsefulLink = ({ url, src, description }) => {
           <a href={url}>
             <img src={src} alt={description} />
           </a>
-          {description}
+          <div style={{ textAlign: "center" }}>{description}</div>
         </VeritcalAllignedBox>
       </Stack>
     </CenterBox>

@@ -10,7 +10,7 @@ const VeritcalAllignedBox = ({
 }) => {
   return (
     <Box
-      marginTop={marginTop || 5}
+      marginTop={marginTop || 2}
       display="flex"
       flexDirection="column"
       alignItems="center"

@@ -7,7 +7,7 @@ import DefaultLayout from "../containers/DefaultLayout";
 const PricingPage = () => {
   return (
     <DefaultLayout>
-      <VeritcalAllignedBox marginTop={2}>
+      <VeritcalAllignedBox>
         <BlockTypography variant="h4">Prices for 2022</BlockTypography>
         <CenterBox width={{ xs: "100%", sm: "50%" }}>
           <PricingTable />

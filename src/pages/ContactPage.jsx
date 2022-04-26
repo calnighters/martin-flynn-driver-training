@@ -8,7 +8,7 @@ import { phoneNumber, email } from "../constants";
 const ContactPage = () => {
   return (
     <DefaultLayout>
-      <VeritcalAllignedBox marginTop={2}>
+      <VeritcalAllignedBox>
         <BlockTypography variant="h4">Contact Me</BlockTypography>
         <CenterBox width={{ xs: "100%", sm: "50%" }}>
           <Stack spacing={2}>

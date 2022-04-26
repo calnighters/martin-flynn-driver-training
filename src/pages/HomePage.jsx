@@ -7,7 +7,7 @@ import BlockTypography from "../components/BlockTypography";
 const HomePage = () => {
   return (
     <DefaultLayout>
-      <VeritcalAllignedBox marginTop={1}>
+      <VeritcalAllignedBox>
         <CenterBox>
           <Stack
             direction={{ xs: "column", sm: "row" }}
