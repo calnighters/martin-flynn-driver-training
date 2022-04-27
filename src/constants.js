@@ -10,8 +10,14 @@ const theoryPrice = process.env.REACT_APP_THEORY_PRICE;
 const practicalPrice = process.env.REACT_APP_PRACTICAL_PRICE;
 const baseUrl = process.env.REACT_APP_BASE_URL;
 const baseEndpoint = "/martin-flynn";
+const testimonialEndpoint = "/testimonial";
+const priceEndpoint = "/price";
 const password = process.env.REACT_APP_PASSWORD;
 const username = "ADMIN_USERNAME";
+const TYPE = {
+  TESTIMONIAL: testimonialEndpoint,
+  PRICE: priceEndpoint,
+};
 
 const externalUrls = [
   {
@@ -55,4 +61,7 @@ export {
   baseEndpoint,
   password,
   username,
+  testimonialEndpoint,
+  priceEndpoint,
+  TYPE,
 };

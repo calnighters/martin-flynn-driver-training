@@ -1,8 +1,8 @@
 import { baseEndpoint, baseUrl, password, username } from "../constants";
 import { Buffer } from "buffer";
 
-const create = (data, callbackSuccess, callbackError) =>
-  fetch(`${baseUrl}${baseEndpoint}`, {
+const create = (type, data, callbackSuccess, callbackError) =>
+  fetch(`${baseUrl}${baseEndpoint}${type}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

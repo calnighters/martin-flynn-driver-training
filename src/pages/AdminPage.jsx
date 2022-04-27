@@ -16,8 +16,17 @@ import CenterBox from "../components/CenterBox";
 import VerticalPaper from "../components/VerticalPaper";
 import { useEffect, useState } from "react";
 import create from "../api/create";
-import deleteReview from "../api/delete";
+import deleteItem from "../api/delete";
 import get from "../api/get";
+import update from "../api/update";
+import { TYPE } from "../constants";
+import MaterialTable from "@material-table/core";
+
+const columns = [
+  { title: "ID", field: "id", hidden: true },
+  { title: "Type", field: "type" },
+  { title: "Price", field: "price" },
+];
 
 const AdminPage = () => {
   const [rating, setRating] = useState(0);
@@ -27,6 +36,7 @@ const AdminPage = () => {
   const [deleteAlert, setDeleteAlert] = useState(false);
   const [createAlert, setCreateAlert] = useState(false);
   const [records, setRecords] = useState([]);
+  const [prices, setPrices] = useState([]);
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -44,11 +54,13 @@ const AdminPage = () => {
   const handleDeleteRequest = (e) => {
     deleteId === undefined
       ? setDeleteAlert(true)
-      : deleteReview(
+      : deleteItem(
+          TYPE.TESTIMONIAL,
           deleteId,
           () => {
             const dataDelete = [...records];
-            const index = records.filter((item) => item.id === deleteId)[0].id;
+            const index = records.filter((item) => item.id === deleteId)[0]
+              .index;
             dataDelete.splice(index, 1);
             setRecords([...dataDelete]);
             setDeleteId();
@@ -63,6 +75,7 @@ const AdminPage = () => {
     name === "" || body === ""
       ? setCreateAlert(true)
       : create(
+          TYPE.TESTIMONIAL,
           {
             name: name,
             rating: rating,
@@ -81,6 +94,7 @@ const AdminPage = () => {
 
   useEffect(() => {
     get(
+      TYPE.TESTIMONIAL,
       (result) => {
         setRecords(result.testimonials);
       },
@@ -89,6 +103,83 @@ const AdminPage = () => {
       }
     );
   }, []);
+
+  useEffect(() => {
+    get(
+      TYPE.PRICE,
+      (result) => {
+        setPrices(result.prices);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }, []);
+
+  const editable = {
+    onRowAdd: (newData) =>
+      new Promise((resolve, reject) =>
+        setTimeout(() =>
+          create(
+            TYPE.PRICE,
+            newData,
+            () => {
+              setPrices([...prices, newData]);
+              resolve();
+            },
+            () => {
+              reject();
+            }
+          )
+        )
+      ),
+    onRowUpdate: (newData, oldData) =>
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          return update(
+            TYPE.PRICE,
+            {
+              id: oldData.id,
+              type: newData.type,
+              price: newData.price,
+            },
+            () => {
+              const dataUpdate = [...prices];
+              const index = oldData.tableData.index;
+              dataUpdate[index] = {
+                id: oldData.id,
+                type: newData.type,
+                price: newData.price,
+              };
+              setPrices([...dataUpdate]);
+              resolve();
+            },
+            () => {
+              reject();
+            }
+          );
+        }, 1000);
+      }),
+    onRowDelete: (oldData) =>
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          return deleteItem(
+            TYPE.PRICE,
+            oldData.id,
+            () => {
+              const dataDelete = [...prices];
+              const index = oldData.tableData.index;
+              dataDelete.splice(index, 1);
+              setPrices([...dataDelete]);
+              resolve();
+            },
+            () => {
+              reject();
+            }
+          );
+        }, 1000);
+      }),
+  };
 
   return (
     <DefaultLayout>
@@ -176,6 +267,19 @@ const AdminPage = () => {
                 </Alert>
               )}
             </VerticalPaper>
+            <MaterialTable
+              style={{ width: "100%" }}
+              title="Prices"
+              columns={columns}
+              data={prices.sort((a, b) => a.id - b.id)}
+              options={{
+                actionsColumnIndex: -1,
+                paging: false,
+                search: false,
+                sorting: false,
+              }}
+              editable={editable}
+            />
           </Stack>
         </CenterBox>
       </VeritcalAllignedBox>

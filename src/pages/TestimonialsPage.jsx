@@ -5,6 +5,7 @@ import BlockTypography from "../components/BlockTypography";
 import CenterBox from "../components/CenterBox";
 import { useEffect, useState } from "react";
 import get from "../api/get";
+import { TYPE } from "../constants";
 
 const TestimonialsPage = () => {
   const [recordCount, setRecordCount] = useState(3);
@@ -16,6 +17,7 @@ const TestimonialsPage = () => {
 
   useEffect(() => {
     get(
+      TYPE.TESTIMONIAL,
       (result) => {
         setRecords(result.testimonials);
       },

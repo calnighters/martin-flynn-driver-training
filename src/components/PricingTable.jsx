@@ -7,10 +7,26 @@ import {
   TableRow,
   TableCell,
 } from "@mui/material";
-import prices from "../prices";
+import { useEffect, useState } from "react";
+import get from "../api/get";
+import { TYPE } from "../constants";
 
 const columns = [{ name: "Type" }, { name: "Price" }];
 const PricingTable = () => {
+  const [prices, setPrices] = useState([]);
+
+  useEffect(() => {
+    get(
+      TYPE.PRICE,
+      (result) => {
+        setPrices(result.prices);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }, []);
+
   return (
     <TableContainer style={{ padding: "20px" }} component={Paper}>
       <Table size="small">
@@ -22,14 +38,17 @@ const PricingTable = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {prices.map(({ name, price }) => (
-            <TableRow
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-            >
-              <TableCell>{name}</TableCell>
-              <TableCell>£{price}</TableCell>
-            </TableRow>
-          ))}
+          {prices
+            .sort((a, b) => a.id - b.id)
+            .map(({ id, type, price }) => (
+              <TableRow
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                key={id}
+              >
+                <TableCell>{type}</TableCell>
+                <TableCell>£{price}</TableCell>
+              </TableRow>
+            ))}
         </TableBody>
       </Table>
     </TableContainer>

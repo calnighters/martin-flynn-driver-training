@@ -1,7 +1,7 @@
 import { baseUrl, baseEndpoint } from "../constants";
 
-const get = (callbackSuccess, callbackError) =>
-  fetch(`${baseUrl}${baseEndpoint}`)
+const get = (type, callbackSuccess, callbackError) =>
+  fetch(`${baseUrl}${baseEndpoint}${type}`)
     .then((res) => res.json())
     .then(
       (result) => callbackSuccess(result),
