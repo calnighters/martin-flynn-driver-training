@@ -9,7 +9,7 @@ import {
 import React from "react";
 import DrawerComponent from "./DrawerComponent";
 import endpoints from "../routes/endpoints";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const theme = useTheme();
@@ -19,7 +19,12 @@ const NavBar = () => {
   return (
     <AppBar position="static" sx={{ bgcolor: "#dc4b44" }}>
       <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Typography
+          onClick={() => navigate("/")}
+          variant="h6"
+          component="div"
+          sx={{ flexGrow: 1, cursor: "pointer" }}
+        >
           Martin Flynn Driver Training
         </Typography>
         {isMobile ? (
