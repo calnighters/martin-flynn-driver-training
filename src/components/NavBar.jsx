@@ -9,7 +9,7 @@ import {
 import React from "react";
 import DrawerComponent from "./DrawerComponent";
 import endpoints from "../routes/endpoints";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const theme = useTheme();
