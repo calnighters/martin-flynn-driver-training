@@ -64,7 +64,12 @@ const AuthWrapper = ({ children }) => {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2, background: "#dc4b44" }}
+              sx={{
+                mt: 3,
+                mb: 2,
+                background: "#dc4b44",
+                "&:hover": { background: "#dc4b44" },
+              }}
             >
               Sign In
             </Button>
